@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Dashboard {% endblock %}
+{% block signin %}{% endblock %}
+
+{% block content %}
+    <!-- Main Start -->
+    <main>
+		<!-- Services -->
+		<section class="container my-4">
+			<div class="row">
+				<div class="col-9">
+					<h3 class="mb-4 border-bottom pb-1">Dashboard</h3>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<h5 class="card-header">Current Package</h5>
+								<ul class="list-group list-group-flush">
+								    <li class="list-group-item">{{current_plan.plan}}</li>
+								    <li class="list-group-item">Price: {{current_plan.price}}</li>
+								    <li class="list-group-item">Validity: {{current_plan.plan.validity_days}} Days</li>
+								    <li class="list-group-item">Purchase Date: {{current_plan.reg_date}}</li>
+								    <li class="list-group-item">Expiry Date: {{enddate}}</li>
+							  	</ul>
+							</div>
+						</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AchivementModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Achivements</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+        	<thead>
+        		<tr>
+        			<th>Title</th>
+        			<th>Image</th>
+        			<th>Detail</th>
+        		</tr>
+        	</thead>
+        	
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End -->
+    </main>
+    <!-- End -->
+{% endblock %}

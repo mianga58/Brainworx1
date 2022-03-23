@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}{% endblock %}
+{% block signin %}{% endblock %}
+
+{% block title %}Live Stream{% endblock %}
+
+{% block content %}
+
+  <body>
+    <h1>Video Live Stream</h1>
+
+    <img src="{% url 'chat:video_feed' %}">
+
+  </body>
+
+{% endblock %}

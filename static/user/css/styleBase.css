@@ -1,0 +1,127 @@
+button.btn {
+    margin: 4px;
+}
+
+body {
+
+}
+
+nav .nav-link:hover {
+
+    background-position: bottom;
+    box-shadow: 0px 2px black;
+}
+
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
+
+.jumbotron {
+    margin-bottom: 7px;
+    text-align: center;
+    opacity: 1.0;
+
+
+}
+
+.jumbotron p {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+}
+
+.jumbotron h1 {
+    text-shadow: 2px 2px black;
+    font-family: 'Roboto Slab', serif;
+/ / font-family: 'Josefin Sans', sans-serif;
+/ / font-family: 'EB Garamond', serif;
+}
+
+nav {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.jumbotron .btn {
+    box-shadow: 2px 2px 3px black;
+}
+
+footer .container-fluid {
+    margin-top: 4px;
+    padding-top: 10px;
+}
+
+.font-awesome {
+    padding-bottom: 10px;
+}
+
+.font-awesome-inside {
+    word-spacing: 20px;
+}
+
+.col-sm-3.font-awesome-inside {
+    text-align: center;
+}
+
+ul.footer {
+
+    list-style: none;
+
+    padding: 5px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer-lower {
+    text-align: center;
+    padding: 1px;
+    margin: 1px;
+    background-color: #7abaff;
+}
+
+.ul-footer-lower {
+    list-style: none;
+}
+
+.card.quote {
+    background-color: white;
+    box-shadow: none;
+}
+
+.card {
+    margin-bottom: 10px;
+    background-color: lightblue;
+    box-shadow: 4px 4px 3px black;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        background-color: lightblue;
+        margin: auto auto 10px auto;
+    }
+}
+

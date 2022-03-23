@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Pricing {% endblock %}
+{% block signin %}{% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+
+<div class="container">
+      <a class="navbar-brand" href="{% url 'payment:pay2' %}">Chaggy</a>
+ </div> 
+
+<div class="container">
+      <a class="navbar-brand" href="{% url 'payment:pay1' %}">Jobby</a>
+ </div>  
+
+<div class="container">
+      <a class="navbar-brand" href="{% url 'payment:pay' %}">Basic</a>
+ </div> 
+{% endblock %}

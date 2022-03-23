@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Past Papers {% endblock %}
+{% block head %}{% endblock %}
+{% block signin %}{% endblock %}
+
+
+{% block content %}
+
+   <div class="container text-center my-4 minh-75">
+    <div class="container text-center border p-4 my-4">
+        <form enctype="multipart/form-data" action="{% url 'pp:upload' %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="py-4">Add new book</legend>
+                {{ form }}
+                <button type="submit" class="btn btn-primary my-2">upload</button>
+            </fieldset>
+        </form>
+    </div>
+
+
+    {% if books %}
+    <h3 class="text-center my-4">Books List</h3>
+    <table class="table table-responsive-md table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Book Name</th>
+                <th>Download Option</th>
+                <th>Delete Option</th>
+            </tr>
+        </thead>
+        {% for book in books %}
+        <tr>
+            <td><a href="{% url 'pp:read' book.id %}">{{ book }}</a></td>
+            <td><a href="{% url 'pp:download' book.id %}">download</a></td>
+            <td><a href="{% url 'pp:delete' book.id %}">delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <div>
+        <p class="text-muted">You don't have any book yet.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

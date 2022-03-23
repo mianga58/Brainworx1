@@ -1,0 +1,39 @@
+{% load static %}
+
+ <button type="button" onClick="payWithRave()">Basic</button>
+
+<script>
+	const publicKey = "{{ key }}";
+	const photo = "{{logo}}";
+
+	function payWithRave() {
+		var x = getpaidSetup({
+			PBFPubKey: publicKey,
+			customer_email: "{{ user.email }}",
+			amount: {{ pla.amount }},
+			customer_phone: "{{ user.phone }}",
+			currency: "{{ pla.currency }}",
+			country:"ZM",
+			payment_options: "mobilemoneyzambia",
+			txref: "rave-123456",
+			custom_title: "Wildlife Park",
+			custom_logo: photo,
+			onclose: function() {},
+			callback: function(response) {
+					  var txref = response.tx.txRef;
+					  console.log("This is the response returned after a charge", response);
+					  if (
+					response.tx.chargeResponseCode == "00" ||
+					response.tx.chargeResponseCode == "0"
+				) {
+					document.location.href = "{% url 'payment:pay_success' %}"
+
+			   
+				} else {
+					// redirect to a failure page.
+				}
+					  x.close();
+				  }
+		});
+	}
+</script>

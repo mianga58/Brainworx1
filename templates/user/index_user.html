@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block brand-logo %}{% url 'user:home_user' %}{% endblock %}
+{% block home %}{% url 'user:home_user' %}{% endblock %}
+
+{% block signin %}
+    <li class="nav-item dropdown" style="margin-right: 5px;margin-left: 5px;text-align: center;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <b>Welcome!! {{ username }}</b>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+        <li>
+            <a class="dropdown-item" href="{% url 'user:dashboard' %}">Dashboard</a>
+
+        <li>
+
+            <a class="dropdown-item" href="{% url 'user:Profile' %}">My Profile</a>
+
+        </li>
+    </ul>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <style>
+body {
+
+  background-image: url("{% static 'user/images/img3.jpg' %}");
+}
+    </style>
+
+
+     <div class="container-fluid flipInX animated wow" data-wow-delay="0.3s" style="margin-bottom: 10px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card quote" style="text-align: center;">
+                    <div class="card-body" style="text-align: center;background-color: #edfbfb">
+                        <blockquote class="blockquote mb-0">
+                            <h1 class="display-3" style="font-variant-east-asian: ruby">Welcome to BrainworX !!</h1>
+                            <p class="lead">Taking Teaching and Learning <em>To</em> Where it should be.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid flipInX animated wow" data-wow-delay="0.3s" style="margin-bottom: 10px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card quote" style="text-align: center;">
+                    <div class="card-header" style="text-align: center;background-color: #dbffce;">
+                        <h3>Did you Know?</h3>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Your brain has about 100 billion neurons – about as many stars as in the Milky Way galaxy.</p>
+                            <footer class="blockquote-footer">By Anonymous</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-3">
+                <div class="card rotateIn animated wow" data-wow-delay="0.3s" style="width: 18rem;">
+                    <img src="{% static 'user/images/im2' %}" class="card-img-top" alt="Train 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Videos</h5>
+
+                        <a href="#" class="btn btn-primary" type="button" data-toggle="collapse"
+                           title="Press to see details." data-target="#card1" aria-expanded="false"
+                           aria-controls="collapseExample">Show Details</a>
+                        <div class="collapse" id="card1">
+                            <p>
+                                With us all your educational needs through a very clear and straight forward approach to teaching and learning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="card rotateIn animated wow" data-wow-delay="0.3s" style="width: 18rem;">
+                    <img src="{% static 'user/images/im3.jpg' %}" class="card-img-top" alt="Train 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Past Papers</h5>
+                        <a href="#" class="btn btn-primary" type="button" data-toggle="collapse"
+                           data-target="#card2" aria-expanded="false" aria-controls="collapseExample">Show Details</a>
+                        <div class="collapse" id="card2">
+                            <p>
+                                We know that the only way we can prepare for the future is through the lessons of the past.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="card rotateIn animated wow" data-wow-delay="0.3s" style="width: 18rem;">
+                    <img src="{% static 'user/images/im4.jpg' %}" class="card-img-top" alt="Train 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Lessons</h5>
+                        <a href="#" class="btn btn-primary" type="button" data-toggle="collapse"
+                           data-target="#card3" aria-expanded="false" aria-controls="collapseExample">Show Details</a>
+                        <div class="collapse" id="card3">
+                            <p>
+                               If your school teacher does not try. We've got you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+{% block map %}
+    <div class="container-fluid" style="margin-top: 5px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="zoomInLeft animated wow" data-wow-delay="0.2s"
+                    style="text-align: center;  font-family: 'Roboto Slab', serif;">Reach Us</h2>
+                <iframe class="zoomInRight animated wow" data-wow-delay="0.3s"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14630.792908845013!2d87.2866992!3d23.5433539!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f772081cede5e9%3A0x33fb9ccb243dfa5!2sNational+Institute+of+Technology!5e0!3m2!1sen!2sin!4v1558281572972!5m2!1sen!2sin"
+                        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    </div>
+
+
+{% endblock %}

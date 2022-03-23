@@ -1,0 +1,9 @@
+#change:hover {
+    color: #7b37ff;
+}
+
+#change {
+    color: #7b37ff;
+    font-size: 17px;
+    text-shadow: 1px 1px black;
+}

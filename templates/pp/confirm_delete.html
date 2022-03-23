@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}{% endblock %}
+{% block signin %}{% endblock %}
+
+{% block title %}PDFStack - Delete Book{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <p class="lead">Do you really want to delete this book? ({{book}})</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger mr-4">Yes, delete.</button>
+        <a class="btn btn-info" href="{% url 'pp:home' %}">Cancel</a>
+    </form>
+
+</div>
+{% endblock %}

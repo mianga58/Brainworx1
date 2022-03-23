@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Watch {% endblock %}
+{% block signin %}{% endblock %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'videos/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'videos/css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'videos/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'videos/css/templatemo-style.css' %}">
+  <script src="{% static 'videos/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+  <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="main-posts">
+    <div class="container">
+      <div class="row">
+       <!-- <div class="col-md-6 col-sm-6">
+          <img class="single-video" src="{{ video.image.url }}" alt="">
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <video
+              id="my-video"
+              class="video-js"
+              controls
+              preload="auto"
+              width="1000"
+              height="800"
+              data-setup="{}"
+          >
+            <source src="{% url 'videos:stream' video.id %}" type="video/mp4"/>
+            <source src="{% url 'videos:stream' video.id %}" type="video/webm"/>
+          </video>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <span class="date">{{ video.create_at }}</span>
+          <h4><a href="{% url 'videos:video' video.id %}">{{ video.title }}</a></h4>
+          <p>{{ video.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+    <script src="{% static 'videos/js/vendor/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'videos/js/min/plugins.min.js' %}"></script>
+<script src="{% static 'videos/js/min/main.min.js' %}"></script>
+
+<script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+<!-- Preloader -->
+<script type="text/javascript">
+    //<![CDATA[
+    $(window).load(function () { // makes sure the whole site is loaded
+        $('#loader').fadeOut(); // will first fade out the loading animation
+        $('#loader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+        $('body').delay(350).css({'overflow-y': 'visible'});
+    })
+    //]]>
+</script>
+{% endblock %}

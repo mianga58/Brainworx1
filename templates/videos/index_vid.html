@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Videos {% endblock %}
+{% block signin %}{% endblock %}
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'videos/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'videos/css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'videos/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'videos/css/templatemo-style.css' %}">
+  <script src="{% static 'videos/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+  <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="main-posts">
+      <div class="container">
+        <div class="row">
+          <div class="blog-masonry masonry-true">
+            {% for video in video_list %}
+              <div class="post-masonry col-md-4 col-sm-6">
+                <div class="post-thumb">
+                  <img src="{{ video.image.url }}" alt="" height="250" width="600">
+                  <div class="title-over">
+                    <h4>{{ video.title }}</h4>
+                  </div>
+                  <div class="post-hover text-center">
+                    <div class="inside">
+                      <i class="fa fa-plus"></i>
+                      <span class="date">{{ video.create_at }}</span>
+                      <h4><a href="{% url 'videos:video' video.id %}">{{ video.title }}</a></h4>
+                      <p>{{ video.description|slice:":100" }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <script src="{% static 'videos/js/vendor/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'videos/js/min/plugins.min.js' %}"></script>
+<script src="{% static 'videos/js/min/main.min.js' %}"></script>
+
+<script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+<!-- Preloader -->
+<script type="text/javascript">
+    //<![CDATA[
+    $(window).load(function () { // makes sure the whole site is loaded
+        $('#loader').fadeOut(); // will first fade out the loading animation
+        $('#loader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+        $('body').delay(350).css({'overflow-y': 'visible'});
+    })
+    //]]>
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load check_package %}
+{% load mathfilters %}
+{% block content %}}
+{% block signin %}{% endblock %}
+{% block head %}
+
+{% endblock %}
+    <h1>Please purchase a plan to get started</h1>
+	{% for plan in plans %}
+
+            <h1>Please purchase a plan to get started</h1>
+			{% if request.user.is_authenticated %}
+			  {% check_user_package request.user.id plan.id as check_pckg %}
+			  {% check_pckg_validity request.user.id plan.id as check_validity %}
+
+			{% if check_pckg %}
+                <h1>Please purchase a plan to get started</h1>
+				 {% if check_validity %}
+                     <h1>Please purchase a plan to get started</h1>
+				  <a href="{% url 'pay' %}" class="w-100 btn btn-lg btn-outline-primary">Get started</a>
+				 {% else %}
+				 <h1>Hello there we making some progress eh!! </h1>
+				 {% endif %}
+                <h1>Please purchase a plan to get started</h1>
+			{% else %}
+			<h1>Please purchase a plan to get started</h1>
+			{% endif %}
+            <h1>Please purchase a plan to get started</h1>
+			{% endif %}
+
+
+	{% endfor %} 
+
+
+<!-- LightBox css -->
+<link rel="stylesheet" type="text/css" href="{% static 'lightbox2-2.11.3/dist/css/lightbox.min.css' %}" />
+<!-- LightBox Js -->
+<script type="text/javascript" src="{% static 'lightbox2-2.11.3/dist/js/lightbox.min.js' %}"></script>
+
+{% endblock %}
