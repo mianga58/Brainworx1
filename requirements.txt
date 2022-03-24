@@ -18,6 +18,7 @@ django-heroku==0.3.1
 django-import-export==2.7.1
 django-jazzmin
 django-mathfilters
+djangorave
 django-rest-framework-mongoengine==3.4.1
 django-storages==1.10
 djangoflutterwave==0.3.0
