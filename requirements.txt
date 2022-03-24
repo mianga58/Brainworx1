@@ -16,6 +16,7 @@ django-decouple==2.1
 django-filter==2.3.0
 django-heroku==0.3.1
 django-import-export==2.7.1
+django-jazzmin
 django-rest-framework-mongoengine==3.4.1
 django-storages==1.10
 djangoflutterwave==0.3.0
