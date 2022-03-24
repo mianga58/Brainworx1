@@ -170,23 +170,21 @@ STATIC_URL = '/static/'
 
 MEDIA_URL='/media/'
 
-#STATIC_ROOT=BASE_DIR/'static_root'
+STATIC_ROOT=BASE_DIR/'static_root'
 MEDIA_ROOT=BASE_DIR/'media'
 
-#STATICFILES_DIRS=[
- #   BASE_DIR/'static',
-#]
+STATICFILES_DIRS=[
+    BASE_DIR/'static',
+]
 
 # Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
+#STATICFILES_DIRS = (
+ #   os.path.join(BASE_DIR, 'static'),
+#)
 #STATIC_ROOT  =  os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #password reset
